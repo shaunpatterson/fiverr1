@@ -1,21 +1,12 @@
+import datetime
 import os
-import datetime
-import uuid
-from typing import List, Optional
 
-from sqlalchemy import DateTime, ForeignKeyConstraint, Integer, JSON, LargeBinary, PrimaryKeyConstraint, Text, \
-    UniqueConstraint, text, Boolean, Uuid, Double
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.orm import Mapped, mapped_column, relationship
-
-from sqlalchemy import Boolean, DateTime, Double, ForeignKeyConstraint, Integer, JSON, LargeBinary, PrimaryKeyConstraint, Text, UniqueConstraint, Uuid, text
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
-import datetime
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-import uuid
 from fastapi import FastAPI
-from starlette.middleware.cors import CORSMiddleware
+from sqlalchemy import DateTime, Integer, PrimaryKeyConstraint, Text, text
+from sqlalchemy import create_engine
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.orm import sessionmaker
+
 
 class Base(DeclarativeBase):
     pass
