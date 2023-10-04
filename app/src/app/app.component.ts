@@ -19,9 +19,15 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   public ngOnInit(): void {
+    try {
+      console.log("Trying to call GET /api/test");
       this.http.get<Test>('/api/test').subscribe((t) => {
-          this.test = t;
+        this.test = t;
       });
+    } catch (e) {
+      console.error("Failed to call /api/test");
+      console.error(e);
+    }
   }
 
 }

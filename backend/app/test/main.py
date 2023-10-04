@@ -2,6 +2,7 @@ import datetime
 import os
 
 from fastapi import FastAPI
+from fastapi_route_logger_middleware import RouteLoggerMiddleware
 from sqlalchemy import DateTime, Integer, PrimaryKeyConstraint, Text, text
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
@@ -34,7 +35,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
 app = FastAPI(title="Test")
-
+app.add_middleware(RouteLoggerMiddlewar)
 
 @app.get("/api/test")
 async def get():
